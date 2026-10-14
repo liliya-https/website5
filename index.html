@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости заказа — КубГУ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header" id="top">
+        <div class="header-inner">
+            <div class="header-image-wrapper">
+                <img src="IMAGES/shapka.png" alt="Сайт КубГУ" class="header-bg-img">
+            </div>
+            <div class="header-text-group">
+                <h1 class="header-title">Кубанский государственный университет</h1>
+                <p class="header-subtitle">Калькулятор стоимости заказа</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-inner">
+            <a href="#top">Главная</a>
+            <a href="#calculator">Калькулятор</a>
+            <a href="#about">Инструкция</a>
+        </div>
+    </nav>
+
+    <main class="content-width page-main">
+        <section class="intro-section" aria-labelledby="intro-title">
+            <p class="section-kicker">Учебный проект</p>
+            <h2 id="intro-title">Расчёт стоимости заказа</h2>
+            <p>Выберите товар, укажите количество и нажмите кнопку. Итоговая сумма появится ниже.</p>
+        </section>
+
+        <section id="calculator" class="calculator-card" aria-labelledby="calculator-title">
+            <h2 id="calculator-title">Калькулятор</h2>
+
+            <form id="calculatorForm" novalidate>
+                <div class="form-field">
+                    <label for="product">Товар</label>
+                    <select id="product" name="product">
+                        <option value="120">Тетрадь — 120 ₽</option>
+                        <option value="60">Ручка — 60 ₽</option>
+                        <option value="180">Папка — 180 ₽</option>
+                        <option value="95">Маркер — 95 ₽</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="quantity">Количество</label>
+                    <input
+                        id="quantity"
+                        name="quantity"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        placeholder="Например, 3"
+                        aria-describedby="quantityHelp"
+                    >
+                    <small id="quantityHelp">Введите целое положительное число.</small>
+                </div>
+
+                <button type="submit" id="calculateButton">
+                    Рассчитать стоимость
+                </button>
+            </form>
+
+            <div id="result" class="result-panel" role="status"
+                 aria-live="polite" aria-atomic="true">
+                <p class="result-label">Итоговая стоимость</p>
+                <output id="totalPrice" for="product quantity">— ₽</output>
+                <p id="resultMessage">После расчёта сумма появится здесь.</p>
+            </div>
+        </section>
+
+        <section id="about" class="instructions" aria-labelledby="about-title">
+            <h2 id="about-title">Как пользоваться</h2>
+            <ol>
+                <li>Выберите товар из списка.</li>
+                <li>Введите количество, например 3.</li>
+                <li>Нажмите «Рассчитать стоимость».</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Кубанский государственный университет</p>
+        <p>Евсикова Лилия Николаевна</p>
+    </footer>
+</body>
+</html>
